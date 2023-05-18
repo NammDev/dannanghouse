@@ -1,3 +1,4 @@
+import Navbar from '@/components/navbar/narbav'
 import './globals.css'
 import { Nunito } from 'next/font/google'
 
@@ -14,7 +15,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang='en'>
       <body className={font.className}>
-        <div>{children}</div>
+        <Navbar />
+        {children}
       </body>
     </html>
   )
