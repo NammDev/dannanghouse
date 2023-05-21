@@ -61,13 +61,120 @@ const UserMenu: React.FC<UserMenuProps> = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
             <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Are you sure absolutely sure?</DialogTitle>
-                <DialogDescription>
-                  This action cannot be undone. This will permanently delete your account and remove
-                  your data from our servers.
-                </DialogDescription>
-              </DialogHeader>
+              {/* <h3 className='mb-4 text-xl font-medium text-gray-900'>Sign in to our platform</h3>
+              <form className='space-y-6'>
+                <div>
+                  <label className='block mb-2 text-sm font-medium text-gray-900 '>
+                    Your email
+                  </label>
+                  <input
+                    type='email'
+                    name='email'
+                    id='email'
+                    className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 '
+                    placeholder='name@company.com'
+                    required
+                  />
+                </div>
+                <div>
+                  <label className='block mb-2 text-sm font-medium text-gray-900 '>
+                    Your password
+                  </label>
+                  <input
+                    type='password'
+                    name='password'
+                    id='password'
+                    placeholder='••••••••'
+                    className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
+                    required
+                  />
+                </div>
+                <div className='flex justify-between'>
+                  <div className='flex items-start'>
+                    <div className='flex items-center h-5'>
+                      <input
+                        id='remember'
+                        type='checkbox'
+                        className='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 '
+                        required
+                      />
+                    </div>
+                    <label className='ml-2 text-sm font-medium text-gray-900'>Remember me</label>
+                  </div>
+                  <a href='#' className='text-sm text-blue-700 hover:underline'>
+                    Forgot Password?
+                  </a>
+                </div>
+                <button
+                  type='submit'
+                  className='w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center'
+                >
+                  Login to your account
+                </button>
+                <div className='text-sm font-medium text-gray-500'>
+                  Not registered?{' '}
+                  <a href='#' className='text-blue-700 hover:underline'>
+                    Create account
+                  </a>
+                </div>
+              </form> */}
+              <div className='mx-auto flex flex-col justify-center space-y-6 sm:w-[350px]'>
+                <div className='flex flex-col space-y-2 text-center'>
+                  <Icons.logo className='w-6 h-6 mx-auto' />
+                  <h1 className='text-2xl font-semibold tracking-tight'>Welcome back</h1>
+                  <p className='text-sm text-muted-foreground'>
+                    Enter your email to sign in to your account
+                  </p>
+                </div>
+                <div className='grid gap-6'>
+                  <form>
+                    <div className='grid gap-2'>
+                      <div className='grid gap-1'>
+                        <label
+                          className='text-sm font-medium leading-none sr-only peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+                          htmlFor='email'
+                        >
+                          Email
+                        </label>
+                        <input
+                          className='flex w-full h-10 px-3 py-2 text-sm bg-transparent border rounded-md border-input ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
+                          id='email'
+                          placeholder='name@example.com'
+                          autoCapitalize='none'
+                          autoComplete='email'
+                          autoCorrect='off'
+                          type='email'
+                          name='email'
+                        />
+                      </div>
+                      <button className='inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90'>
+                        Sign In with Email
+                      </button>
+                    </div>
+                  </form>
+                  <div className='relative'>
+                    <div className='absolute inset-0 flex items-center'>
+                      <span className='w-full border-t' />
+                    </div>
+                    <div className='relative flex justify-center text-xs uppercase'>
+                      <span className='px-2 bg-background text-muted-foreground'>
+                        Or continue with
+                      </span>
+                    </div>
+                  </div>
+                  <button
+                    type='button'
+                    className='inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors border rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border-input hover:bg-accent hover:text-accent-foreground'
+                  >
+                    <Icons.gitHub className='w-4 h-4 mr-2' /> Github
+                  </button>
+                </div>
+                <p className='px-8 text-sm text-center text-muted-foreground'>
+                  <a className='underline hover:text-brand underline-offset-4' href='/register'>
+                    Don&apos;t have an account? Sign Up
+                  </a>
+                </p>
+              </div>
             </DialogContent>
           </Dialog>
         </DropdownMenu>
