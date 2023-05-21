@@ -8,7 +8,15 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '../ui/dropdown'
+} from '@/components/ui/dropdown'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
 
 interface UserMenuProps {}
 
@@ -22,30 +30,46 @@ const UserMenu: React.FC<UserMenuProps> = () => {
         <div className='hidden px-3 py-3 mr-1 text-sm font-semibold transition rounded-full cursor-pointer md:block hover:bg-neutral-100'>
           <Icons.globe className='w-4 h-4' />
         </div>
+
         <DropdownMenu>
-          <DropdownMenuTrigger>
-            <div className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'>
-              <Icons.menu className='w-4 h-4' />
-              <div className='hidden md:block'>
-                <Avatar />
+          <Dialog>
+            <DropdownMenuTrigger asChild>
+              <div className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'>
+                <Icons.menu className='w-4 h-4' />
+                <div className='hidden md:block'>
+                  <Avatar />
+                </div>
               </div>
-            </div>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align='end'>
-            <DropdownMenuItem asChild className='font-semibold'>
-              <div>Sign Up</div>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <div>Log in</div>
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem asChild>
-              <div>Airbnb your home</div>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <div>Help</div>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align='end'>
+              <DropdownMenuItem asChild className='font-semibold'>
+                <DialogTrigger asChild>
+                  <div>Sign Up</div>
+                </DialogTrigger>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <DialogTrigger asChild>
+                  <div>Login</div>
+                </DialogTrigger>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                <div>Airbnb your home</div>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <div>Help</div>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+                <DialogDescription>
+                  This action cannot be undone. This will permanently delete your account and remove
+                  your data from our servers.
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </DropdownMenu>
       </div>
       {/* {isOpen && (
